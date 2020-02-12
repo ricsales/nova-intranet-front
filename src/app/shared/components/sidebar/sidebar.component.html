@@ -1,0 +1,73 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title><img [src]="servidor.imagem | safe" style="border-radius:50%; width: 32px; height: 32px;" />&nbsp;&nbsp;&nbsp;Perfil</mat-card-title>
+      <mat-card-subtitle>
+        <p><span style="font-weight:bolder">Nome: </span>{{ servidor.nome }}</p>
+        <p><span style="font-weight:bolder">{{ servidor.cargo }}</span></p>
+          
+          <p><span style="font-weight:bolder">Lotação: </span>{{ servidor.lotacao }}</p>
+          <p><span style="font-weight:bolder">Data de Admissão: </span> {{ servidor.dataDeAdmissao | date }} </p>
+          <p><span style="font-weight:bolder">Horário de Trabalho do Dia: </span> <span *ngFor="let h of servidor.horariosDeTrabalho; let i = index">
+
+            {{ i % 2 == 0 ?  h + ' às ' : (i == (servidor.horariosDeTrabalho.length-1) ? h : h + ' | ' )  }} 
+          </span> </p>
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-actions dir="rtl" fxLayout="row">
+      <button mat-stroked-button (click)="abrirDialogAlterarSenha()">Alterar Senha</button>
+      <button mat-stroked-button (click)="sair()">Sair</button>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Designações em Vigor
+        </mat-panel-title>
+        
+      </mat-expansion-panel-header>
+        <ul>
+            <li *ngFor="let d of servidor.designacoesEmVigor">{{ d.nome }} <button *ngIf="d.tipo" mat-flat-button color="warn">{{ d.tipo }}</button> </li>
+            
+        </ul>
+      
+    </mat-expansion-panel>
+   
+  </mat-accordion>
+
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Banco de Horas
+        </mat-panel-title>
+        
+      </mat-expansion-panel-header>
+      Horas mais próximas de se vencer:
+        <ul>
+            <li><span style="font-weight:bolder">+ Positivas: </span> {{ servidor.bancoDeHorasPositivas.quantidade }} a se vencerem em {{ servidor.bancoDeHorasPositivas.dataVencimento | date }}</li>
+            <li><span style="font-weight:bolder">- Negativas: </span> {{ servidor.bancoDeHorasNegativas.quantidade }} a se vencerem em {{ servidor.bancoDeHorasNegativas.dataVencimento | date }}</li>
+        </ul>
+        <button mat-stroked-button>Visualizar Detalhes</button>
+    </mat-expansion-panel>
+   
+  </mat-accordion>
+
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Férias e Afastamentos
+        </mat-panel-title>
+        
+      </mat-expansion-panel-header>
+        <ul>
+            <li *ngFor="let f of servidor.feriasEAfastamentos"> {{ f.inicio | date }} a {{ f.fim | date }} ({{ pegarDiferencaEntreDuasDatas(f) }} dias)&nbsp;<button mat-flat-button [color]="getColorFerias(f)">{{ f.tipo }}</button></li>
+        </ul>
+      
+    </mat-expansion-panel>
+   
+  </mat-accordion>
+
+  <button style="margin-top:1vh;width:96%;" mat-stroked-button>Acessar o Espaço RH</button>

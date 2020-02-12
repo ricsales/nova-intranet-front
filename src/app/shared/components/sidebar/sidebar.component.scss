@@ -1,0 +1,17 @@
+mat-card{
+    width: 85%;
+    margin-top: 1.6vh;
+    
+}
+
+mat-expansion-panel{
+    width: 96%;
+    margin-top: 1vh;
+}
+::ng-deep .mat-card-header-text {
+    margin-left: 0 !important;
+}
+
+mat-panel-title{
+    font-weight: bold;
+}

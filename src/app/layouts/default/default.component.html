@@ -1,0 +1,12 @@
+<section class="mat-typography">
+    
+  
+<app-header [drawer]="drawer" fxLayout></app-header>
+<ngx-loading-bar></ngx-loading-bar>
+<mat-drawer-container class="example-container">
+    <mat-drawer [opened]="screenWidth > 500" #drawer mode="side" position="start" ><app-sidebar></app-sidebar></mat-drawer>
+    <mat-drawer-content><router-outlet></router-outlet></mat-drawer-content>
+</mat-drawer-container>
+
+<app-footer></app-footer>
+</section>

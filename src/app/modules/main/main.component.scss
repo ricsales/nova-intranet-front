@@ -1,0 +1,64 @@
+
+  
+.servico-card{
+  text-align: center;
+  width: 12vh;
+  /*img{
+    height: 5vh;
+  }*/
+}
+
+.servico-card-lg{
+  text-align: center;
+  width: 12vh;
+  /*img{
+    height: 7vh;
+  }*/
+}
+
+.miniatura{
+  width: 15vh;
+}
+  
+.miniatura-logo{
+  width: 15vh;
+}
+
+.miniatura-lg{
+  width: 30vh;
+}
+
+.miniatura-icone{
+  width: 12vh;
+}
+
+.miniatura-icone-lg{
+  width: 12vh;
+}
+
+.imagem-miniatura{
+  height: 10vh;
+  
+}
+
+
+
+.imagem-miniatura-lg{
+  height: 21vh;
+}
+
+
+
+
+
+
+.titulo-miniatura{
+  font-size: 0.8em;
+  font-weight: bolder;
+  white-space: normal;
+}
+
+.servicos-destaques-container{
+  overflow-x:auto; 
+  white-space:nowrap;
+}

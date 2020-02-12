@@ -1,0 +1,83 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Notícias</mat-card-title>
+    <mat-card-subtitle><span style="font-weight:bolder">Destaques</span></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div fxLayout="row" fxLayoutGap="10px" style="overflow-x:scroll; white-space:nowrap">
+      <mat-card  *ngFor="let n of noticias" (click)="clickIrParaNoticia(n)" fxFlex="none" [ngClass]="['miniatura']" [ngClass.gt-md]="['miniatura-lg']">
+        <img *ngIf="n.imagem" [ngClass]="['imagem-miniatura']" [ngClass.gt-md]="['imagem-miniatura-lg']" mat-card-image [src]="n.imagem">
+        <iframe  mat-card-image *ngIf="n.codigoVideoYoutube" [ngClass]="['imagem-miniatura']" [ngClass.gt-md]="['imagem-miniatura-lg']"  [src]="('https://www.youtube.com/embed/' + n.codigoVideoYoutube) | safe" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <mat-card-content>
+          <p class="titulo-miniatura">
+            {{ n.titulo }}
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-card-content>
+  <mat-card-actions dir="rtl" fxLayout="row">
+    <button mat-stroked-button (click)="clickBotaoMaisNoticias()">Mais Notícias</button>
+  </mat-card-actions>
+</mat-card>
+
+
+<mat-card class="example-card" style="margin-top: 1em;">
+  <mat-card-header>
+    <mat-card-title>Serviços</mat-card-title>
+    
+  </mat-card-header>
+  
+  <mat-card-content fxLayout="row wrap" fxLayoutGap="10px">
+    <mat-card class="example-card" fxFlex.gt-md="49" fxFlex="100" >
+      <mat-card-header>
+        <mat-card-subtitle><span style="font-weight:bolder">Destaques</span></mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content class="servicos-destaques-container" >
+        <div class="servicos-destaques-container" fxLayoutGap="10px">
+          <mat-card *ngFor="let s of servicosDestaque" fxFlex="none"  [ngClass]="['servico-card']" [ngClass.gt-md]="['servico-card-lg']">
+            <img  mat-card-image [src]="s.icone"
+              alt="Photo of a Shiba Inu">
+            <mat-card-content>
+              <p class="titulo-miniatura">
+                {{ s.nome }}
+              </p>
+            </mat-card-content>
+    
+          </mat-card>
+    
+        </div>
+      </mat-card-content>
+      
+      
+    </mat-card>
+    <mat-card class="example-card" fxFlex.gt-md="49"  fxFlex="100">
+      <mat-card-header>
+        <mat-card-subtitle><span style="font-weight:bolder">Favoritos ★</span></mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="servicos-destaques-container" fxLayoutGap="10px">
+          <mat-card *ngFor="let s of servicosFavoritos" fxFlex="none"  [ngClass]="['servico-card']" [ngClass.gt-md]="['servico-card-lg']">
+            <img  mat-card-image [src]="s.icone"
+              alt="Photo of a Shiba Inu">
+            <mat-card-content>
+              <p class="titulo-miniatura">
+                {{ s.nome }}
+              </p>
+            </mat-card-content>
+    
+          </mat-card>
+    
+        </div>
+      </mat-card-content>
+    
+      
+    </mat-card>
+
+  </mat-card-content>
+
+  <mat-card-actions dir="rtl" fxLayout="row">
+    <button mat-stroked-button (click)="clickBotaoMaisServicos()">Mais Serviços</button>
+  </mat-card-actions>  
+  
+</mat-card>

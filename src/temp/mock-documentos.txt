@@ -1,0 +1,17 @@
+[{
+        "nome": "Portaria 123456",
+        "caminhoArquivo": "/dpga/documentos/portarias",
+        "tipoArquivo": "pdf",
+        "tamanhoArquivo": "2",
+        "dataUltimaModificacao": "2021-01-23T11:49:53.090Z",
+        "resumoArquivo": "Portaria que trata da mudança de atribuição das promotorias"
+},
+{
+        "nome": "Portaria 6987745",
+        "caminhoArquivo": "/dpga/documentos/portarias",
+        "tipoArquivo": "pdf",
+        "tamanhoArquivo": "0.5",
+        "dataUltimaModificacao": "2021-02-23T11:49:53.090Z",
+        "resumoArquivo": "Portaria que trata da mudança da liberação de servidoress"
+}
+]

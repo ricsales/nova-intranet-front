@@ -1,0 +1,34 @@
+
+<div fxLayout="column" class="login" fxLayoutAlign="space-evenly center" >
+
+    <mat-card class="example-card">
+        <form class="example-form">
+        <mat-card-header>
+          
+          <mat-card-title>#intranetmprn</mat-card-title>
+          <mat-card-subtitle>Login</mat-card-subtitle>
+        </mat-card-header>
+        
+        <mat-card-content>
+            
+                <mat-form-field class="example-full-width">
+                  <input type="text" matInput placeholder="Usuário" >
+                </mat-form-field>
+                <br/>
+                <mat-form-field class="example-full-width">
+                    <input type="password" matInput placeholder="Senha">
+                  </mat-form-field>
+                  <br/>
+              
+
+                  <mat-checkbox name="manterConectado" class="example-margin" [(ngModel)]="manterConectado">Manter-me conectado</mat-checkbox>
+              
+        </mat-card-content>
+        <mat-card-actions>
+          
+          <button action="submit" (click)="logar()" mat-button>Entrar</button>
+        </mat-card-actions>
+    </form>
+      </mat-card>
+
+</div>

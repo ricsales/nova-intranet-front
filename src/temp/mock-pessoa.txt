@@ -1,0 +1,27 @@
+ {
+        "nome": "Fulano de Tal da Silva",
+        "cargo": "Promotor de Justiça Substituto",
+        "imagem" : "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTbbYCrSdrKjXo6szjfXIGDDRhMrW1O5JJx5kGz7tVct8RfICPQ",
+        "matricula": "999.999-9",
+        "lotacao": "Promotoria de Justiça da Comarca de Pasárgada",
+        "dataDeAdmissao": "2020-01-23T11:49:53.090Z",
+        "horariosDeTrabalho": [
+            "08:00", "12:00", "14:00", "18:00"
+        ],
+        "designacoesEmVigor":[
+            {"nome": "Chefia de Gabinete", "tipo": null},
+            {"nome": "10ª Promotoria de Justiça da Comarca de Cabrobró", "tipo":"Substituição"}
+        ],
+        "bancoDeHorasPositivas": {
+            "quantidade": "08:00",
+            "dataVencimento": "2021-01-23T11:49:53.090Z"
+        },
+        "bancoDeHorasNegativas": {
+            "quantidade": "05:00",
+            "dataVencimento": "2020-05-23T11:49:53.090Z"
+        },
+        "feriasEAfastamentos":[
+            {"inicio":"2020-05-01T11:49:53.090Z", "fim":"2020-05-23T11:49:53.090Z", "tipo":"Férias"},
+            {"inicio":"2020-06-01T11:49:53.090Z", "fim":"2020-07-23T11:49:53.090Z", "tipo":"Licença"}
+        ]
+}

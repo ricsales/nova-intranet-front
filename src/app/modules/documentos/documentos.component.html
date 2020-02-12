@@ -1,0 +1,68 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Documentos</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+     <form (ngSubmit)="onSubmit(angForm.value)" [formGroup]="angForm" class="example-container">
+
+          <mat-form-field class="example-full-width" hintLabel="'Pelo menos 3 caracteres'">
+            
+            <input  type="text" matSize="40" matInput placeholder="Pesquisar" formControlName="termoPesquisa" >
+            <mat-icon matPrefix>search</mat-icon>
+            
+            
+          </mat-form-field>
+          
+        </form>
+
+        
+        <mat-tree *ngIf="ehPrimeiraBusca" [dataSource]="dataSource" [treeControl]="treeControl">
+          <!-- This is the tree node template for leaf nodes -->
+          <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+            <!-- use a disabled button to provide padding for tree leaf -->
+            <button mat-icon-button disabled></button>
+            {{node.name}}
+          </mat-tree-node>
+          <!-- This is the tree node template for expandable nodes -->
+          <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+            <button mat-icon-button matTreeNodeToggle
+                    [attr.aria-label]="'toggle ' + node.name">
+              <mat-icon class="mat-icon-rtl-mirror">
+                {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+              </mat-icon>
+            </button>
+            {{node.name}}
+          </mat-tree-node>
+        </mat-tree>
+
+          
+          
+              <mat-list *ngIf="!ehPrimeiraBusca">
+          <h3 *ngIf="!ehPrimeiraBusca" matSubheader>Documentos Encontrados</h3>
+
+         
+          
+              <mat-list-item (click)="abrirDocumento(d)" *ngFor="let d of documentosEncontrados">
+              
+                  <mat-icon mat-list-icon>{{d.tipoArquivo == 'pdf' ? 'picture_as_pdf' : 'chrome_reader_mode'}}</mat-icon>
+
+              <h3 matLine> {{d.nome}}</h3>
+              <p matLine>
+                  <span style="font-weight: bolder;"> Tipo: </span><span> {{d.tipoArquivo}} </span>
+              </p>
+              <p matLine>
+                  <span style="font-weight: bolder;"> Caminho: </span><span> {{d.caminhoArquivo}} </span>
+              </p>
+              <p matLine>
+                  <span style="font-weight: bolder;"> Resumo: </span><span> {{d.resumoArquivo}} </span>
+              </p>
+              
+              
+          </mat-list-item>
+          
+      </mat-list>
+  
+      
+  </mat-card-content>
+ 
+</mat-card>

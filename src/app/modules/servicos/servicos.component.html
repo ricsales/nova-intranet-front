@@ -1,0 +1,50 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Serviços</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form class="example-form">
+
+            <mat-form-field class="example-full-width">
+              
+              <input (input)="onSearchChange($event.target.value)" type="tel" matInput placeholder="Pesquisar">
+              <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+            
+          </form>
+
+          <mat-list>
+            <h3 matSubheader>Área-Fim</h3>
+            <mat-list-item *ngFor="let s of servicosAreaFimFiltro">
+                <img matListAvatar [src]="s.icone" alt="Photo of a Shiba Inu">
+                <h3 matLine> {{s.nome}}</h3>
+                <p matLine>
+                    <span> {{s.descricao}} </span>
+                </p>
+                <button mat-icon-button>
+                    <mat-icon>star</mat-icon>
+                 </button>
+            </mat-list-item>
+
+            <mat-divider></mat-divider>
+
+            <h3 matSubheader>Área-Meio</h3>
+
+           
+            
+            <mat-list-item *ngFor="let s of servicosAreaMeioFiltro">
+                <img matListAvatar [src]="s.icone" alt="Photo of a Shiba Inu">
+                <h3 matLine> {{s.nome}}</h3>
+                <p matLine>
+                    <span> {{s.descricao}} </span>
+                </p>
+                <button mat-icon-button>
+                    <mat-icon>star_border</mat-icon>
+                 </button>
+            </mat-list-item>
+            
+
+        </mat-list>
+    </mat-card-content>
+   
+  </mat-card>
